@@ -1,11 +1,11 @@
-import {expect} from 'chai'
-import { ATM } from '../src/cash-machine'
+import { expect } from 'chai'
+import { ATMController } from '../../src/routes/atm/atm.controller'
 
-describe('cash machine', () => {
+describe('atm controller', () => {
   let atm
 
   beforeEach(() => {
-    atm = new ATM()
+    atm = new ATMController()
   })
 
   it('should throw an InvalidArgumentException when value is bellow 0', () => {

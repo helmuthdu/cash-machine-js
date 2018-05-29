@@ -6,11 +6,11 @@ class InvalidArgumentException extends Error {
   message = 'InvalidArgumentException'
 }
 
-export class ATM {
+export class ATMController {
   notes = [100, 50, 20, 10]
 
   setNotes (notes) {
-    if (notes) { this.notes = notes }
+    if (Array.isArray(notes)) { this.notes = notes }
   }
 
   withdraw (value) {
@@ -25,8 +25,8 @@ export class ATM {
     return this.notes.reduce((acc, note) => {
       if (value >= note) {
         const n = Math.floor(value / note)
-        acc = acc.concat(new Array(n).fill(note))
         value -= (n * note)
+        return acc.concat(new Array(n).fill(note))
       }
       return acc
     }, [])

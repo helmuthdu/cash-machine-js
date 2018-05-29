@@ -15,5 +15,9 @@ module.exports = wallaby => ({
     '**/*.js': wallaby.compilers.babel({})
   },
 
+  hints: {
+    ignoreCoverage: /ignore coverage/
+  },
+
   debug: true
 })
