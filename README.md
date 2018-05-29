@@ -1,4 +1,4 @@
-## Cash Machine [![Build Status](https://travis-ci.org/helmuthdu/cash-machine.svg?branch=master)](https://travis-ci.org/helmuthdu/cash-machine) [![Coverage Status](https://coveralls.io/repos/github/helmuthdu/cash-machine/badge.svg?branch=master)](https://coveralls.io/github/helmuthdu/cash-machine?branch=master)
+## Cash Machine [![Build Status](https://travis-ci.org/helmuthdu/cash-machine-js.svg?branch=master)](https://travis-ci.org/helmuthdu/cash-machine-js) [![Coverage Status](https://coveralls.io/repos/github/helmuthdu/cash-machine-js/badge.svg?branch=master)](https://coveralls.io/github/helmuthdu/cash-machine-js?branch=master)
 
 ### The Problem
 Develop a solution that simulate the delivery of notes when a client does a withdraw in a cash machine.
