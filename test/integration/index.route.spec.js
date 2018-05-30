@@ -7,7 +7,7 @@ describe('integration->index route', () => {
     await server.close()
   })
 
-  it('return 404 status when accessing an unknown endpoint', (done) => {
+  it('should return status 404 when accessing an unknown endpoint', (done) => {
     supertest(app)
       .get('/somewhere')
       .end((err, res) => {
@@ -20,7 +20,7 @@ describe('integration->index route', () => {
       })
   })
 
-  it('should return 200 status when accessing /api', (done) => {
+  it('should return status 200 when accessing /api', (done) => {
     supertest(app)
       .get('/api')
       .end((err, res) => {

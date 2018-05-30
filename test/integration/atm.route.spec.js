@@ -7,7 +7,7 @@ describe('integration->atm route', () => {
     await server.close()
   })
 
-  it('should return an array of values', (done) => {
+  it('should return status 200 and an array of values', (done) => {
     supertest(app)
       .get('/api/atm/withdraw/240')
       .end((err, res) => {
@@ -21,7 +21,7 @@ describe('integration->atm route', () => {
       })
   })
 
-  it('should return not found status with an empty array', (done) => {
+  it('should return status 404 and an empty array', (done) => {
     supertest(app)
       .get('/api/atm/withdraw/0')
       .end((err, res) => {
@@ -36,7 +36,7 @@ describe('integration->atm route', () => {
       })
   })
 
-  it('should return bad request status with InvalidArgumentException message', (done) => {
+  it('should return status 400 and InvalidArgumentException message when value bellow 0', (done) => {
     supertest(app)
       .get('/api/atm/withdraw/-240')
       .end((err, res) => {
@@ -50,7 +50,7 @@ describe('integration->atm route', () => {
       })
   })
 
-  it('should return bad request status with NoteUnavailableException message', (done) => {
+  it('should return status 400 and NoteUnavailableException message when note not found', (done) => {
     supertest(app)
       .get('/api/atm/withdraw/242')
       .end((err, res) => {

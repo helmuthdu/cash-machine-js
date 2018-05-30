@@ -10,7 +10,7 @@ The basic requirements are the follow:
 - Amount of notes is infinite;
 - Available notes $ 100,00; $ 50,00; $ 20,00 e $ 10,00
 
-## Testing
+### Testing
 To run the tests you just need to execute the following commands inside the project root folder:
 ```bash
 npm install

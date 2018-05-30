@@ -12,7 +12,7 @@ describe('unit->atm service', () => {
     expect(() => atm.withdraw(-130)).to.throw('InvalidArgumentException')
   })
 
-  it('should throw an NoteUnavailableException when not founding an note', () => {
+  it('should throw a NoteUnavailableException when note not found', () => {
     expect(() => atm.withdraw(125)).to.throw('NoteUnavailableException')
   })
 

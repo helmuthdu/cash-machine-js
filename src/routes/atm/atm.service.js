@@ -14,9 +14,9 @@ export class ATMService {
 
     return this.notes.reduce((acc, note) => {
       if (amount >= note) {
-        const n = Math.floor(amount / note)
-        amount -= (n * note)
-        return acc.concat(new Array(n).fill(note))
+        const total = Math.floor(amount / note)
+        amount -= (total * note)
+        return acc.concat(new Array(total).fill(note))
       }
       return acc
     }, [])

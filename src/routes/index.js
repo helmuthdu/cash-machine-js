@@ -1,3 +1,4 @@
+import { OK } from 'http-status'
 import { logger } from '../services'
 import { ATMRoute } from './atm'
 import { BaseRoute } from './route'
@@ -53,6 +54,6 @@ export class ApiRoutes extends BaseRoute {
    * @param res {Response} The express Response object.
    */
   async get (req, res) {
-    res.status(200).json({ online: true })
+    res.status(OK).json({ online: true })
   }
 }
