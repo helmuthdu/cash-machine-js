@@ -14,6 +14,6 @@ The basic requirements are the follow:
 To run the tests you just need to execute the following commands inside the project root folder:
 ```bash
 npm install
-npm run tests
+npm run test
 ```
 
