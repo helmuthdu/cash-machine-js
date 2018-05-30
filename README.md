@@ -13,7 +13,7 @@ The basic requirements are the follow:
 ## Testing
 To run the tests you just need to execute the following commands inside the project root folder:
 ```bash
-yarn
-yarn run tests
+npm install
+npm run tests
 ```
 

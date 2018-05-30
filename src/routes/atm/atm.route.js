@@ -1,6 +1,7 @@
-import { logger } from '../../services/index'
+import { BAD_REQUEST, NOT_FOUND, OK } from 'http-status'
+import { logger } from '../../services'
 import { BaseRoute } from '../route'
-import { ATMController } from './atm.controller'
+import { atmService } from './atm.service'
 
 /**
  * @api {get} /atm ATM endpoint
@@ -12,7 +13,6 @@ import { ATMController } from './atm.controller'
 export class ATMRoute extends BaseRoute {
   static path = '/atm'
   static instance
-  controller = new ATMController()
 
   /**
    * @class ATMRoute
@@ -20,7 +20,7 @@ export class ATMRoute extends BaseRoute {
    */
   constructor () {
     super()
-    this.getNotes = this.getNotes.bind(this)
+    this.getMoney = this.getMoney.bind(this)
     this.init()
   }
 
@@ -35,8 +35,7 @@ export class ATMRoute extends BaseRoute {
     // log
     logger.info('[ATMRoute] Creating atm route.')
 
-    // add index page route
-    this.router.get('/withdraw/:value', this.getNotes)
+    this.router.get('/withdraw/:amount', this.getMoney)
   }
 
   /**
@@ -44,10 +43,13 @@ export class ATMRoute extends BaseRoute {
    * @method get
    * @param req {Request} The express Request object.
    * @param res {Response} The express Response object.
-   * @param next {NextFunction} Execute the next method.
    */
-  async getNotes (req, res, next) {
-    res.json(this.controller.withdraw(req.params.value))
-    next()
+  getMoney (req, res) {
+    try {
+      const notes = atmService.withdraw(req.params.amount)
+      res.status(notes.length ? OK : NOT_FOUND).json(notes)
+    } catch (err) {
+      res.status(BAD_REQUEST).json(err)
+    }
   }
 }

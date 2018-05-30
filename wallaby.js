@@ -1,5 +1,6 @@
 module.exports = wallaby => ({
   files: [
+    'config/**',
     { pattern: './src/**/*.js', load: false }
   ],
 
@@ -17,7 +18,5 @@ module.exports = wallaby => ({
 
   hints: {
     ignoreCoverage: /ignore coverage/
-  },
-
-  debug: true
+  }
 })

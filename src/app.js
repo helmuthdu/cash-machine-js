@@ -3,14 +3,13 @@ import compression from 'compression'
 import cors from 'cors'
 import errorHandler from 'errorhandler'
 import express from 'express'
-import expressStatusMonitor from 'express-status-monitor'
 import helmet from 'helmet'
 import methodOverride from 'method-override'
 import morgan from 'morgan'
 import path from 'path'
 
-import { ApiRoutes } from './routes/index'
-import { logger } from './services/index'
+import { ApiRoutes } from './routes'
+import { logger } from './services'
 
 /**
  * The server.
@@ -19,17 +18,6 @@ import { logger } from './services/index'
  */
 export class Server {
   app
-
-  /**
-   * Bootstrap the application.
-   *
-   * @class Server
-   * @method bootstrap
-   * @static
-   */
-  static bootstrap () {
-    return new Server()
-  }
 
   /**
    * Constructor.
@@ -46,6 +34,17 @@ export class Server {
 
     // add routes
     this.routes()
+  }
+
+  /**
+   * Bootstrap the application.
+   *
+   * @class Server
+   * @method bootstrap
+   * @static
+   */
+  static bootstrap () {
+    return new Server()
   }
 
   /**
@@ -78,7 +77,7 @@ export class Server {
     this.app.use(cors())
     this.app.use(compression())
     this.app.use(methodOverride())
-    this.app.use(expressStatusMonitor())
+    this.app.use(require('express-status-monitor')())
 
     // catch 404 and forward to error handler
     this.app.use((err, req, res, next) => {

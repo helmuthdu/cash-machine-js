@@ -1,18 +1,18 @@
 import { expect } from 'chai'
-import { ATMController } from '../../src/routes/atm/atm.controller'
+import { ATMService } from '../../src/routes/atm/atm.service'
 
-describe('atm controller', () => {
+describe('unit->atm service', () => {
   let atm
 
   beforeEach(() => {
-    atm = new ATMController()
+    atm = new ATMService()
   })
 
-  it('should throw an InvalidArgumentException when value is bellow 0', () => {
+  it('should throw an InvalidArgumentException when amount is bellow 0', () => {
     expect(() => atm.withdraw(-130)).to.throw('InvalidArgumentException')
   })
 
-  it('should throw an NoteUnavailableException when value is not a multiple of 10', () => {
+  it('should throw an NoteUnavailableException when not founding an note', () => {
     expect(() => atm.withdraw(125)).to.throw('NoteUnavailableException')
   })
 

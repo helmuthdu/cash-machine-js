@@ -1,5 +1,5 @@
-import { logger } from '../services/index'
-import { ATMRoute } from './atm/index'
+import { logger } from '../services'
+import { ATMRoute } from './atm'
 import { BaseRoute } from './route'
 
 /**

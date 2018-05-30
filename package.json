@@ -1,5 +1,5 @@
 {
-  "name": "cash-machine",
+  "name": "cash-machine-js",
   "version": "1.0.0",
   "description": "Design patterns implemented in javascript",
   "scripts": {
@@ -25,6 +25,7 @@
     "express": "^4.16.3",
     "express-status-monitor": "^1.0.1",
     "helmet": "^3.12.1",
+    "http-status": "^1.1.2",
     "method-override": "^2.3.10",
     "morgan": "^1.9.0",
     "winston": "^2.4.2"
@@ -73,17 +74,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/helmuthdu/cash-machine.git"
+    "url": "git+https://github.com/helmuthdu/cash-machine-js.git"
   },
-  "keywords": [
-    "design",
-    "patterns",
-    "gof"
-  ],
   "author": "Helmuth Saatkamp<helmuthdu@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/helmuthdu/cash-machine/issues"
+    "url": "https://github.com/helmuthdu/cash-machine-js/issues"
   },
-  "homepage": "https://github.com/helmuthdu/cash-machine#readme"
+  "homepage": "https://github.com/helmuthdu/cash-machine-js#readme"
 }
